@@ -1,34 +1,15 @@
+"use client"
 import Navbar from "@/app/navbar/navbar";
-import Video from "@/app/videos/video";
+import Home from "@/app/home";
+import {useState} from "react";
 
-export default function Home() {
-    const videos = [
-        {
-            title: "Cica vagyok videó",
-            id: 1,
-            duration: 24000,
-            uploader: "csédániel",
-            released: 1244441383000
-        },
-        {
-            title: "Cica vagyok videó",
-            id: 2,
-            duration: 24000,
-            uploader: "csédániel",
-            released: 1244441383000
-        },
-    ]
+export default function Main() {
+    const [View, setView] = useState(() => Home);
 
-  return (
+    return (
       <>
-          <Navbar />
-          <div className="home">
-              <div className="videos">
-                  {videos.map((video) => (
-                      <Video key={video.id} video={video} />
-                  ))}
-              </div>
-          </div>
+          <Navbar view={View} setView={setView} />
+          <View />
       </>
-  );
+    );
 }

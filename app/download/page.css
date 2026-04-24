@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+main {
+    @apply flex justify-center items-center w-full h-screen;
+}
+
+.ct {
+    @apply flex flex-col justify-between items-center w-full h-[6rem];
+}
+
+.download {
+    @apply bg-black rounded-lg w-[40rem] h-[16rem] p-6;
+    animation: popIn 400ms ease-in-out;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+    }
+
+    75% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.title {
+    @apply text-3xl self-start;
+}
+
+.url {
+    @apply rounded-lg outline-none p-2 self-start w-[30.7rem];
+    background-color: rgba(200, 200, 255, 0.4);
+}
+
+.btn {
+    @apply rounded-2xl p-4 self-end cursor-pointer;
+    background-color: rgba(200, 200, 255, 0.4);
+}

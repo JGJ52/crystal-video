@@ -5,8 +5,7 @@ export default function Video({ video }) {
     return (
         <>
             <div className="video">
-                {/*<Image src={`/api/videos/${video.id}/thumbnail`} alt={video.title} width={432} height={216} />*/}
-                <img className={"vid"} src={"https://img.youtube.com/vi/ZVrQRAf5dJg/maxresdefault.jpg"} alt="cica" width={432} height={216} />
+                <Image src={`/api/videos/${video.id}/thumbnail`} alt={video.title} width={432} height={216} />
                 <p className={"title rubik"}>{video.title}</p>
                 <p className={"info fredoka"}>
                     by {video.uploader}

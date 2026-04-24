@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+.home {
+    padding-top: calc(4rem + 2px) !important;
+}
+
 nav {
     @apply fixed bg-[#1a1a1a] top-0 left-0 right-0 w-full min-h-16 h-fit border-b-2 border-b-[#30343f] flex flex-row justify-between;
 }
