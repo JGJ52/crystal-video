@@ -1,16 +1,13 @@
 @import "tailwindcss";
 
-main {
-    @apply flex justify-center items-center w-full h-screen;
-}
-
 .ct {
     @apply flex flex-col justify-between items-center w-full h-[6rem];
 }
 
 .download {
-    @apply bg-black rounded-lg w-[40rem] h-[16rem] p-6;
+    @apply bg-black rounded-lg w-[40rem] h-[16rem] p-6 fixed self-center top-1/2 -translate-y-1/2;
     animation: popIn 400ms ease-in-out;
+    z-index: 3;
 }
 
 @keyframes popIn {
