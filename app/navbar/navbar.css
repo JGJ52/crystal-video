@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+nav {
+    @apply fixed bg-[#1a1a1a] top-0 left-0 right-0 w-full min-h-16 h-fit border-b-2 border-b-[#30343f] flex flex-row justify-between;
+}
+
+.nav-button {
+    @apply p-2 rounded-lg m-2 h-12 flex items-center justify-center cursor-pointer gap-1;
+    transition: background-color 200ms ease;
+}
+
+.nav-button-background {
+    background-color: rgba(200, 200, 255, 0.4);
+}
+
+.nav-button:hover {
+    background-color: rgba(200, 200, 255, 0.4);
+}
