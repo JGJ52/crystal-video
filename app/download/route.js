@@ -16,6 +16,7 @@ export async function POST(request) {
             dumpSingleJson: true,
             preferFreeFormats: true,
             noPlaylist: true,
+            jsRuntimes: "node",
         });
 
         await youtubeDl(url, {
@@ -26,6 +27,7 @@ export async function POST(request) {
             noPlaylist: true,
             mergeOutputFormat: "webm",
             ffmpegLocation: "/usr/bin/ffmpeg",
+            jsRuntimes: "node",
         });
 
         await youtubeDl(info.uploader_url, {
@@ -35,6 +37,7 @@ export async function POST(request) {
             convertThumbnails: "jpg",
             noPlaylist: true,
             ffmpegLocation: "/usr/bin/ffmpeg",
+            jsRuntimes: "node",
         });
 
         await query(`

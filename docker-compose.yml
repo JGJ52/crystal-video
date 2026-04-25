@@ -13,8 +13,6 @@ services:
       - YTDLP_URL=http://ytdlp:3001
     restart: unless-stopped
     volumes:
-      - /usr/bin/yt-dlp:/usr/bin/yt-dlp
-      - /usr/bin/ffmpeg:/usr/bin/ffmpeg
       - ./videos:/crystal/videos
       - ./.env:/crystal/.env
     networks:
