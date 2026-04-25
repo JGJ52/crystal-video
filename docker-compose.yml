@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  app:
+    image: crystal:latest
+    container_name: crystal
+    ports:
+      - "3004:3000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/app
+      - YTDLP_URL=http://ytdlp:3001
+    restart: unless-stopped
+    volumes:
+      - /usr/bin/yt-dlp:/usr/bin/yt-dlp
+      - /usr/bin/ffmpeg:/usr/bin/ffmpeg
+      - ./videos:/crystal/videos
+      - ./.env:/crystal/.env
+    networks:
+      - crystal_nw
+
+  db:
+    image: postgres:16
+    container_name: postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - crystal_nw
+
+networks:
+  crystal_nw:

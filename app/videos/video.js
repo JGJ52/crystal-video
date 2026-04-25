@@ -1,16 +1,16 @@
 import "./video.css";
 import Image from "next/image";
 
-export default function Video({ video }) {
+export default function Video({ video, uploader, setPlaying }) {
     return (
         <>
-            <div className="video">
-                <Image src={`/api/videos/${video.id}/thumbnail`} alt={video.title} width={432} height={216} />
+            <div className="video" onClick={() => setPlaying(video)}>
+                <Image src={`/videos/thumbnail/${video.id}`} alt={video.title} loading={"eager"} width={432} height={216} />
                 <p className={"title rubik"}>{video.title}</p>
                 <p className={"info fredoka"}>
-                    by {video.uploader}
+                    by {uploader}
                     <br />
-                    on {new Date(video.released).toLocaleString("hu-HU")}
+                    on {new Date(Number(video.timestamp)).toLocaleString("hu-HU")}
                 </p>
             </div>
         </>

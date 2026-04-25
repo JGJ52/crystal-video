@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+video {
+    @apply w-auto;
+    height: calc(100vh - 66px);
+}

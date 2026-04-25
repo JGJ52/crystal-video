@@ -1,11 +1,11 @@
-import Navbar from "@/app/navbar/navbar";
-import Home from "@/app/home";
+import {ToastContainer} from "react-toastify";
+import Uploaders from "@/app/uploaders/uploaders";
 
 export default function Main() {
     return (
       <>
-          <Navbar />
-          <Home />
+          <Uploaders />
+          <ToastContainer theme={"dark"} position={"bottom-right"} />
       </>
     );
 }

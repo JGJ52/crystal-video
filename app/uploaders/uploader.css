@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+.uploader {
+    @apply w-[216px] p-4 rounded-2xl cursor-pointer;
+    background-color: #211a1d;
+    animation: scaleOut 500ms ease-out;
+    img {
+        width: 216px !important;
+        height: 216px !important;
+    }
+}
+
+.uploader:hover {
+    animation: scaleIn 250ms ease-in;
+    transform: scale(1.03);
+}
+
+.name {
+    @apply text-center text-2xl font-bold mt-2;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.03);
+    }
+}
+
+@keyframes scaleOut {
+    from {
+        transform: scale(1.03);
+    }
+    to {
+        transform: scale(1);
+    }
+}

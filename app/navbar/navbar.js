@@ -2,14 +2,14 @@
 import "./navbar.css";
 import Button from "@/app/navbar/button";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faDownload, faGear, faHome} from "@fortawesome/free-solid-svg-icons";
+import {faArrowRotateRight, faDownload, faGear, faHome} from "@fortawesome/free-solid-svg-icons";
 import Settings from "@/app/settings/settings";
 import Download from "@/app/download/download";
 import {useState} from "react";
 
 function Empty() { return null; }
 
-export default function Navbar() {
+export default function Navbar({ updateVideos, homeClick }) {
     const [View, setView] = useState(() => Empty);
 
     function is(view) {
@@ -23,7 +23,7 @@ export default function Navbar() {
         <>
             <nav>
                 <div className={"flex flex-row"}>
-                    <Button onClick={() => setView(() => Empty)} background={is(Empty) || is(DownloadView) || is(SettingsView)}>
+                    <Button onClick={homeClick ? homeClick : () => setView(() => Empty)} background={(is(Empty) || is(DownloadView) || is(SettingsView)) && !homeClick}>
                         <FontAwesomeIcon icon={faHome} />
                         Home
                     </Button>
@@ -32,10 +32,15 @@ export default function Navbar() {
                         Download
                     </Button>
                 </div>
-                <Button onClick={() => setView(() => is(SettingsView) ? Empty : SettingsView)} background={is(SettingsView)}>
-                    <FontAwesomeIcon icon={faGear} />
-                    Settings
-                </Button>
+                <div className={"flex flex-row"}>
+                    <Button onClick={updateVideos}>
+                        <FontAwesomeIcon icon={faArrowRotateRight} />
+                    </Button>
+                    <Button onClick={() => setView(() => is(SettingsView) ? Empty : SettingsView)} background={is(SettingsView)}>
+                        <FontAwesomeIcon icon={faGear} />
+                        Settings
+                    </Button>
+                </div>
             </nav>
             <View />
         </>

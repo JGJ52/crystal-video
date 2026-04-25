@@ -1,9 +1,13 @@
 @import "tailwindcss";
 
 .video {
-    @apply w-fit p-4 rounded-2xl cursor-pointer;
+    @apply w-[432px] p-4 rounded-2xl cursor-pointer;
     background-color: #211a1d;
     animation: scaleOut 500ms ease-out;
+    img {
+        width: 432px !important;
+        height: 216px !important;
+    }
 }
 
 .video:hover {
@@ -16,7 +20,7 @@
 }
 
 .title {
-    @apply text-center text-2xl font-bold;
+    @apply text-center text-2xl font-bold mt-2;
 }
 
 .info {
