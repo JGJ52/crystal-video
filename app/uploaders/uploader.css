@@ -4,10 +4,6 @@
     @apply w-[216px] p-4 rounded-2xl cursor-pointer;
     background-color: #211a1d;
     animation: scaleOut 500ms ease-out;
-    img {
-        width: 216px !important;
-        height: 216px !important;
-    }
 }
 
 .uploader:hover {
@@ -17,6 +13,9 @@
 
 .name {
     @apply text-center text-2xl font-bold mt-2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 @keyframes scaleIn {

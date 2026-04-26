@@ -1,6 +1,53 @@
 @import "tailwindcss";
 
+.vid-ct {
+    @apply w-full h-fit flex justify-center flex-col relative;
+}
+
 video {
-    @apply w-auto;
-    height: calc(100vh - 66px);
+    @apply w-auto bg-black;
+    height: calc(100vh - 66px - 24px);
+}
+
+.controls {
+    @apply self-center flex justify-between w-full;
+}
+
+.volume {
+    -webkit-appearance: none;
+    margin-left: 10px;
+}
+
+.volume::-webkit-slider-runnable-track {
+    background: white;
+    height: 3px;
+    border-radius: 20px;
+}
+
+.volume::-moz-range-track {
+    background-color: white;
+    border-radius: 20px;
+}
+
+.volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: white;
+    border-radius: 50%;
+    margin-top: -5px;
+    width: 14px;
+    height: 14px;
+}
+
+.volume::-moz-range-thumb {
+    background-color: white;
+    border: none;
+}
+
+.time {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.time::-webkit-slider-runnable-track {
+    margin-top: 8px;
 }
