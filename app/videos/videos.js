@@ -8,7 +8,7 @@ import Button from "@/app/navbar/button";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faExpand, faPause, faPlay, faVolumeHigh, faVolumeMute} from "@fortawesome/free-solid-svg-icons";
 import MaterialIcon from "@/app/material";
-import Icon from "@/app/videos/icon";
+import IconNotPage from "@/app/videos/icon-not-page";
 
 export default function Videos({ uploader, setUploader }) {
     const [vids, setVideos] = useState([]);
@@ -120,9 +120,9 @@ export default function Videos({ uploader, setUploader }) {
                         </div>
                     </div>
                     {showIcon && (
-                        <Icon>
+                        <IconNotPage>
                             <FontAwesomeIcon icon={play} size="3x" />
-                        </Icon>
+                        </IconNotPage>
                     )}
                 </div>
             </>
