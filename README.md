@@ -2,7 +2,7 @@
 ![hackatime](https://hackatime.hackclub.com/api/v1/badge/U0922GMGGTU/JGJ52/crystal-video)
 
 ### A WebUI to download & play YouTube videos
-
+#### Uses PostgreSQL & yt-dlp
 Setting up
 ```shell
 git clone https://github.com/JGJ52/crystal-video.git
